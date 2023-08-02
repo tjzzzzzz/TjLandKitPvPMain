@@ -26,3 +26,11 @@ commands:
   help:
     description: Help message
     usage: /help
+
+  setspawn:
+    description: Sets the spawn point
+    usage: /setspawn
+
+  spawn:
+    description: Teleports you to spawn.
+    usage: /spawn

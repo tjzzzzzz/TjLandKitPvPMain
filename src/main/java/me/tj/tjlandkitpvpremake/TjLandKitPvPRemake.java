@@ -1,9 +1,10 @@
 package me.tj.tjlandkitpvpremake;
 
-import me.tj.tjlandkitpvpremake.commands.gmc;
-import me.tj.tjlandkitpvpremake.commands.gms;
-import me.tj.tjlandkitpvpremake.commands.gmsp;
-import me.tj.tjlandkitpvpremake.commands.help;
+import me.tj.tjlandkitpvpremake.KitPvPCore.CoreEvents;
+import me.tj.tjlandkitpvpremake.KitPvPCore.KitPvPManager.KitSelectorGive;
+import me.tj.tjlandkitpvpremake.KitPvPCore.KitPvPManager.kitManagerRegions;
+import me.tj.tjlandkitpvpremake.KitPvPCore.KitPvPManager.kitSelectorGui;
+import me.tj.tjlandkitpvpremake.commands.*;
 import me.tj.tjlandkitpvpremake.commands.msg.DataManager;
 import me.tj.tjlandkitpvpremake.commands.msg.MessageCommand;
 import me.tj.tjlandkitpvpremake.commands.msg.ReplyCommand;
@@ -36,6 +37,14 @@ public final class TjLandKitPvPRemake extends JavaPlugin {
         getCommand("gms").setExecutor(new gms());
         getCommand("gmsp").setExecutor(new gmsp());
         getCommand("help").setExecutor(new help());
+        getCommand("setspawn").setExecutor(new setspawn(this));
+        getCommand("spawn").setExecutor(new spawn(this));
+
+        // Registering basic events
+        getServer().getPluginManager().registerEvents(new CoreEvents(this), this);
+        getServer().getPluginManager().registerEvents(new KitSelectorGive(), this);
+        getServer().getPluginManager().registerEvents(new kitSelectorGui(this), this);
+        getServer().getPluginManager().registerEvents(new kitManagerRegions(this), this);
 
     }
 
