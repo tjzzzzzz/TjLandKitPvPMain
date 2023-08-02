@@ -1,0 +1,28 @@
+name: TjLandKitPvPRemake
+version: '${project.version}'
+main: me.tj.tjlandkitpvpremake.TjLandKitPvPRemake
+api-version: '1.20'
+commands:
+  gmc:
+    description: Gamemode Creative
+    usage: /gmc or /gmc <player>
+
+  gms:
+    description: Gamemode Survival
+    usage: /gms or /gms <player>
+
+  gmsp:
+    description: Gamemode Spectator
+    usage: /gmsp or /gmsp <player>
+
+  msg:
+    description: Msg people.
+    usage: /msg <player> <message>
+
+  r:
+    description: Reply to people that sent you a message
+    usage: /r <message>
+
+  help:
+    description: Help message
+    usage: /help
